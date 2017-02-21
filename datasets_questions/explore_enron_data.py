@@ -19,4 +19,12 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
-
+c = 0
+for x in enron_data:
+	if enron_data[x]["bonus"] == 97343619 :
+		print x
+"""	if enron_data[x]["poi"]:
+		c+=1
+print enron_data["LAY KENNETH L"]["total_payments"]
+"""
+print c
