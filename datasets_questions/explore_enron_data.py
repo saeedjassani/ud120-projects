@@ -19,12 +19,13 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
-c = 0
+max = 0
+min = 98522
 for x in enron_data:
-	if enron_data[x]["bonus"] == 97343619 :
-		print x
-"""	if enron_data[x]["poi"]:
-		c+=1
-print enron_data["LAY KENNETH L"]["total_payments"]
-"""
-print c
+	if enron_data[x]["exercised_stock_options"] != 'NaN' and enron_data[x]["exercised_stock_options"] > max:
+		max = enron_data[x]["exercised_stock_options"]
+	if enron_data[x]["exercised_stock_options"] < min:
+		min = enron_data[x]["exercised_stock_options"]
+print max
+print min
+
